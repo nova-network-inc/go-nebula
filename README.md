@@ -9,13 +9,19 @@ For automated building and using of Nova Network, please refer to our Node Manag
 Building Nova Network will require you to have previously installed Go (v16+) and a C compiler. Once the dependencies have been installed, you can run:
 
 ```shell
-make nova
+make novanetwork
 ```
 
 And if you prefer to build the full suite of tools, you can use:
 
 ```shell
-make nova-all
+make novanetwork-full
+```
+
+You can also build the development tools suite by running:
+
+```shell
+make novanetwork-devtools
 ```
 
 ## Running Nova Network

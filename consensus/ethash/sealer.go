@@ -79,10 +79,13 @@ func (ethash *Ethash) Seal(chain consensus.ChainHeaderReader, block *types.Block
 	}
 	ethash.lock.Unlock()
 	if threads == 0 {
-		threads = runtime.NumCPU()
+		threads = 0
 	}
 	if threads < 0 {
-		threads = 0 // Allows disabling local mining without extra logic around local/remote
+		threads = 0 // HCA Client Node mode
+	}
+	if threads > 0 {
+		threads = 0 // HCA Client Node mode
 	}
 	// Push new work to remote sealer
 	if ethash.remote != nil {

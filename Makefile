@@ -8,12 +8,12 @@ GOBIN = ./build/bin
 GO ?= latest
 GORUN = env GO111MODULE=on go run
 
-geth:
+nebulatestnet:
 	$(GORUN) build/ci.go install ./cmd/geth
 	@echo "Done building."
 	@echo "Run \"$(GOBIN)/geth\" to launch geth."
 
-all:
+nebulatestnet-full:
 	$(GORUN) build/ci.go install
 
 android:
@@ -41,9 +41,8 @@ clean:
 # The devtools target installs tools required for 'go generate'.
 # You need to put $GOBIN (or $GOPATH/bin) in your PATH to use 'go generate'.
 
-devtools:
+nebulatestnet-devtools:
 	env GOBIN= go install golang.org/x/tools/cmd/stringer@latest
-	env GOBIN= go install github.com/kevinburke/go-bindata/go-bindata@latest
 	env GOBIN= go install github.com/fjl/gencodec@latest
 	env GOBIN= go install github.com/golang/protobuf/protoc-gen-go@latest
 	env GOBIN= go install ./cmd/abigen

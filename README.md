@@ -1,40 +1,18 @@
-# Nebula Testnet
+# Nova Network
 
-Nova Network is a open-source DAG programable smart contracts platform built for decentralised and enterprise-level applications, in one highly scalable ecosystem. Nova Network is home to digital money, decentralised infrastructure, and applications, ready and built to scale for global usage and adoption. It is compatible and interoperable with Ethereum and other EVM networks, and Solidity is natively compatible, making it easy and quick for Ethereum developers to build, deploy, or fork from existing open-source infrastructure built on other networks.
+Nebula Testnet is the testing instance of Nova Network. Nova Network is a open-source DAG programable smart contracts platform built for decentralised and enterprise-level applications, in one highly scalable ecosystem. Nova Network is home to digital money, decentralised infrastructure, and applications, ready and built to scale for global usage and adoption. It is compatible and interoperable with Ethereum and other EVM networks, and Solidity is natively compatible, making it easy and quick for Ethereum developers to build, deploy, or fork from existing open-source infrastructure built on other networks.
 
-For automated building and using of Nova Network, please refer to our Node Management Software available at https://github.com/nova-network-inc/nova-network-node-manager.
+If you are using Microsoft Windows, we recommend you to use our Windows Node Manager. You can find more information on the following repository https://github.com/nova-network-inc/nova-network-node-manager.
 
-## Building Nova Network
-
-Building Nova Network will require you to have previously installed Go (v16+) and a C compiler. Once the dependencies have been installed, you can run:
-
-```shell
-make novanetwork
-```
-
-And if you prefer to build the full suite of tools, you can use:
-
-```shell
-make novanetwork-full
-```
-
-You can also build the development tools suite by running:
-
-```shell
-make novanetwork-devtools
-```
-
-## Running Nova Network
-
-Enumerating all available flags is outside of the scope of this tutorial, but we have listed a few and common parameters you can use to get your Nova Network up and running.
+## Installing and Running a Node
 
 ### Hardware Requirements
 
 Minimum Requirements:
 
 * CPU With 2+ Cores
-* 4GB RAM
-* 500GB of free storage to sync with Nova Network
+* 8GB RAM
+* 200GB of free storage to sync with Nova Network
 * 8 MBit/sec download Internet service
 
 Recommended Specs:
@@ -44,17 +22,50 @@ Recommended Specs:
 * High Performance SSD with at least 1TB free space
 * 25+ MBit/sec download Internet service
 
-### Starting a Nova Network Node
+### Running the Scripts
 
-Before running the start command, please make sure you have downloaded or created your genesis file, and placed it within the main directory of Nova Network. Failing to do that will make impossible for you to start your node.
+We have made the process of building and installing Nebula Testnet easy and simple with automated scripts. You will find a full list of available script commands below, but for installing your node all you need to do after cloning this repository is to execute the following scripts, in order:
+
+First, run the ```nodeInstall``` script to install all the dependencies.
 
 ```shell
-geth --datadir .nova-network-db init novanetwork && geth --datadir .nova-network-db --networkid "87"
+bash nodeInstall.sh
 ```
 
-You can replace, remove, or add your own flags to the command above.
+Then you open a detached screen so you can run your node and connect to the JS Console in the same machine.
+
+```shell
+screen
+```
+
+Now you start your node using the ```nodeStart``` script.
+
+```shell
+bash nodeStart.sh
+```
+
+All done! Your node should have started syncing by now, and once all blocks are imported, you will have a fully operational node. You can use ```Ctrl + A + D``` to detach the screen and leave the node running in the background.
+
+## Available Script Commands
+
+All the commands listed below are bash scripts our team has compiled to facilitate the usage of Go Nova. Some of the scripts below will require ```CHMOD 777``` to work properly, and we always recommend running them using ```sudo```.
+
+```shell
+
+build.sh                   - Builds Go Nebula.
+
+deploy.sh                  - Deploys Go Nebula, making it globally available.
+
+nodeInstall.sh             - Installs all the node dependencies, builds and deploys Go Nebula.
+
+nodeStart.sh               - Starts a local node with the standard parameters and snap sync.
+
+nodeStartFull.sh           - Starts a full node.
+
+nodeStartRPC.sh            - Starts a RPC node on port 8545 with HTTP and WS enabled.
+
+```
 
 ## More Information
 
 For more information, you can visit our documents library available at https://docs.novanetwork.io or reach out directly to our support team.
-

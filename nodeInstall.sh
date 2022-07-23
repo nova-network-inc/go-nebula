@@ -101,7 +101,7 @@ make novanetwork-full
 sudo chmod 777 build/bin/geth
 sudo mv build/bin/geth build/bin/nebula
 sudo chmod 777 build/bin/nebula
-sudo mv sudo mv build/bin/nebula /usr/bin
+sudo mv build/bin/nebula /usr/bin
 
 # Cleanup the screen.
 clear

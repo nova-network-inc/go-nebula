@@ -2,7 +2,7 @@
 
 # This script will start a Nebula Testnet node in your machine. You will still have
 # to set up your sync enode with your validator key to connect to the mainnet.
-# This script requires elevated access privileged (CHMOD 777).
+# This script requires elevated access privileged (chmod 755).
 
 # Welcome Message
 echo "Welcome to Nebula Testnet!"

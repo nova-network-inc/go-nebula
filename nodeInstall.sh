@@ -2,8 +2,8 @@
 
 # This script will install all the required packages for running a Nebula Testnet
 # node, as well as setting all the necessary environment variables.
-# This script requires elevated access privileged (CHMOD 777), please run:
-# chmod 777 nodeInstall.sh before launching, and then bash nodeInstall.sh to start.
+# This script requires elevated access privileged (chmod 755), please run:
+# chmod 755 nodeInstall.sh before launching, and then bash nodeInstall.sh to start.
 
 minRAM=8                 # Minimum RAM requirements in GB
 minDisk=200              # Minimum Disk space requirements in GB
@@ -98,9 +98,9 @@ wget https://novanetwork.io/download/271BD152B3C22467FA81F5F35B5EB9B6B9C2C827349
 # Build Go Nova using Golang.
 echo "Installing 5/5 - Building Go Nova..."
 make novanetwork-full
-sudo chmod 777 build/bin/geth
+sudo chmod 755 build/bin/geth
 sudo mv build/bin/geth build/bin/nebula
-sudo chmod 777 build/bin/nebula
+sudo chmod 755 build/bin/nebula
 sudo mv build/bin/nebula /usr/bin
 
 # Cleanup the screen.

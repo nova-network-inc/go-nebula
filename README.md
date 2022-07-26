@@ -48,7 +48,7 @@ All done! Your node should have started syncing by now, and once all blocks are 
 
 ## Available Script Commands
 
-All the commands listed below are bash scripts our team has compiled to facilitate the usage of Go Nova. Some of the scripts below will require ```CHMOD 777``` to work properly, and we always recommend running them using ```sudo```.
+All the commands listed below are bash scripts our team has compiled to facilitate the usage of Go Nova. Some of the scripts below will require ```chmod 755``` to work properly, and we always recommend running them using ```sudo```.
 
 ```shell
 

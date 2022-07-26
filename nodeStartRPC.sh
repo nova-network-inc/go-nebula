@@ -13,4 +13,4 @@ echo ""
 
 # Starting Nebula Testnet
 echo "Starting 2/2 - Starting your Nebula Testnet RPC node..."
-nebula --datadir .dag --networkid "87" --config "nebulatestnet.toml" --rpc.allow-unprotected-txs --nodiscover --maxpeers "1" --syncmode "full" --ipcdisable --bootnodes --graphql --http.port "8545" --http --http.addr "0.0.0.0" --http.corsdomain "*" --http.vhosts "*" --http.api "eth,net,web3"  --ws --ws.addr "0.0.0.0" --ws.origins "*" --ws.api "eth,net,web3" --miner.etherbase "0x000000000000000000000000000000000000dEaD"
+nebula --datadir .dag --networkid "87" --config "nebulatestnet.toml" --rpc.allow-unprotected-txs --nodiscover --maxpeers "1" --syncmode "full" --ipcdisable --bootnodes --graphql --graphql.corsdomain "*" --graphql.vhosts "*" --http.port "8545" --http --http.addr "0.0.0.0" --http.corsdomain "*" --http.vhosts "*" --http.api "eth,net,web3"  --ws --ws.addr "0.0.0.0" --ws.origins "*" --ws.api "eth,net,web3" --miner.etherbase "0x000000000000000000000000000000000000dEaD"

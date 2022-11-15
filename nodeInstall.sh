@@ -92,12 +92,12 @@ sudo apt install screen
 
 # Download genesis block to start the network.
 echo "Installing 4/5 - Downloading Genesis Block and TOML..."
-wget https://novanetwork.io/download/271BD152B3C22467FA81F5F35B5EB9B6B9C2C827349E627B7B794DE8690707BA/nebulatestnet
-wget https://novanetwork.io/download/271BD152B3C22467FA81F5F35B5EB9B6B9C2C827349E627B7B794DE8690707BA/nebulatestnet.toml
+sudo wget https://novanetwork.io/download/271BD152B3C22467FA81F5F35B5EB9B6B9C2C827349E627B7B794DE8690707BA/nebulatestnet
+sudo wget https://novanetwork.io/download/271BD152B3C22467FA81F5F35B5EB9B6B9C2C827349E627B7B794DE8690707BA/nebulatestnet.toml
 
 # Build Go Nova using Golang.
 echo "Installing 5/5 - Building Go Nova..."
-make novanetwork-full
+sudo make nebulatestnet-full
 sudo chmod 755 build/bin/geth
 sudo mv build/bin/geth build/bin/nebula
 sudo chmod 755 build/bin/nebula
